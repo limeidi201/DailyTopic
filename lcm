@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Lcm
+{
+    public static int Gcd(int a,int b)
+    {
+        int max=a>b?a:b;
+        int min=a<b?a:b;
+        int c =max%min;
+        if(c==0)
+        {
+            return min;
+        }
+        return Gcd(c,min);
+    }
+    public static void main(String[] args)
+    {
+        Scanner s = new Scanner(System.in);
+        while (s.hasNext())
+        {
+            int a= s.nextInt();
+            int b= s.nextInt();
+            int count=0;
+            count=a*b;
+            count=count/Gcd(a,b);
+            System.out.println(count);
+        }
+    }
+
+}
